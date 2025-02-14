@@ -1,0 +1,8 @@
+import random
+
+def select_game():
+    games = ['Mines', 'Roulette', 'Dice']
+    return random.choice(games)
+
+selected_game = select_game()
+print(f"Selected Game: {selected_game}")
