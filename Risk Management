@@ -1,0 +1,18 @@
+def risk_management(stop_loss, take_profit, balance):
+    if balance <= stop_loss:
+        print("Stop loss reached. Stopping.")
+        return False
+    elif balance >= take_profit:
+        print("Take profit reached. Stopping.")
+        return False
+    else:
+        return True
+
+stop_loss = -100
+take_profit = 200
+balance = 150
+
+if risk_management(stop_loss, take_profit, balance):
+    print("Continue playing.")
+else:
+    print("Stop playing.")
