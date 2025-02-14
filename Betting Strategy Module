@@ -1,0 +1,22 @@
+def martingale_strategy(initial_bet, max_loss):
+    bet = initial_bet
+    total_loss = 0
+
+    while total_loss < max_loss:
+        # Simulate a game round (win or lose)
+        result = random.choice(['win', 'lose'])
+
+        if result == 'win':
+            print(f"Bet: {bet}, Result: Win")
+            return bet  # Stop after a win
+        else:
+            print(f"Bet: {bet}, Result: Lose")
+            total_loss += bet
+            bet *= 2  # Double the bet after a loss
+
+    print("Max loss reached. Stopping.")
+    return -total_loss
+
+initial_bet = 10
+max_loss = 100
+martingale_strategy(initial_bet, max_loss)
